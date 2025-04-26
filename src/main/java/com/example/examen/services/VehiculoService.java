@@ -33,7 +33,7 @@ public class VehiculoService {
 
     //vehiculo
     newVehiculo.setMarca(vehiculo.getMarca());
-    newVehiculo.setDisponible(true); //error
+    newVehiculo.setDisponible(vehiculo.isDisponible()); //error
     newVehiculo.setAnio(vehiculo.getAnio());
     newVehiculo.setTipoVehiculo(tipoVehiculo);
     //this.vehiculoRepository.save(newVehiculo);
