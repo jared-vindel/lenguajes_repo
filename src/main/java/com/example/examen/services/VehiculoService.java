@@ -45,4 +45,9 @@ public class VehiculoService {
     return this.vehiculoRepository.save(newVehiculo);
 
   }
+
+  public List<Vehiculo> obtenerTodos(){
+    
+    return this.vehiculoRepository.findAll();
+  }
 }

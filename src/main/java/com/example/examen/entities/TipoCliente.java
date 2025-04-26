@@ -2,6 +2,8 @@ package com.example.examen.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,7 +31,8 @@ public class TipoCliente {
   private int idTipoCliente;
 
   private String descripcion;
-
+  
+  @JsonIgnore
   @OneToMany(mappedBy="tipoCliente", cascade=CascadeType.ALL)
   private List<Cliente> clientes;
 }
