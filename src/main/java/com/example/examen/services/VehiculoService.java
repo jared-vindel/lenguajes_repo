@@ -50,4 +50,13 @@ public class VehiculoService {
     
     return this.vehiculoRepository.findAll();
   }
+
+  public Vehiculo obtenerPorId(int id){
+
+    if(this.vehiculoRepository.existsById(id)){
+      return this.vehiculoRepository.findById(id).get();
+    } else {
+      return null;
+    }
+  }
 }

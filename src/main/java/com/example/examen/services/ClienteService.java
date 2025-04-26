@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.examen.entities.Cliente;
 import com.example.examen.entities.TipoCliente;
+import com.example.examen.entities.Vehiculo;
 import com.example.examen.repositories.ClienteRepository;
 import com.example.examen.repositories.TipoClienteRepository;
 
@@ -46,5 +47,14 @@ public class ClienteService {
   public List<Cliente> obtenerTodos(){
 
     return this.clienteRepository.findAll();
+  }
+
+   public Cliente obtenerPorId(int id){
+
+    if(this.clienteRepository.existsById(id)){
+      return this.clienteRepository.findById(id).get();
+    } else {
+      return null;
+    }
   }
 }

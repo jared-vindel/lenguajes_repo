@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.example.examen.entities.TipoCliente;
 import com.example.examen.entities.Vehiculo;
 import com.example.examen.services.VehiculoService;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -37,6 +39,12 @@ public class VehiculoController {
   public List<Vehiculo> obtenerTodos() {
       return this.vehiculoService.obtenerTodos();
   }
+
+  @GetMapping("/obtener/{id}")
+  public Vehiculo obtenerPorId(@PathVariable int id) {
+      return this.vehiculoService.obtenerPorId(id);
+  }
+  
   
   
 
