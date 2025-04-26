@@ -1,10 +1,14 @@
 package com.example.examen.entities;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,4 +32,7 @@ public class TipoVehiculo {
 
   @Column(name="precioxhora")
   private double precioXHora;
+
+  @OneToMany(mappedBy="tipoVehiculo", cascade=CascadeType.ALL)
+  private List<Vehiculo> vehiculos;
 }
