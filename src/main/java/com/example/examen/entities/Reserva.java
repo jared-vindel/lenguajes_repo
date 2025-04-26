@@ -32,4 +32,6 @@ public class Reserva {
 
   private double total;
 
+  
+
 }
